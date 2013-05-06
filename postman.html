@@ -1,0 +1,118 @@
+<html>
+<head>
+
+	<title>Api在线调试工具</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+<style type="text/css">
+input{
+width: 400px;
+height:  30px;
+
+}
+</style>	
+
+	<script src="jquery.js"></script> 
+<script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+			$('.del').live('click',function(){
+//				alert($(this).parents('.partarea').children('.row').size());
+				$(this).parents().filter('.row').remove();
+			
+			})
+			
+			$('.addheader').click(function(){
+				$('.headrow:first').clone().appendTo('.hheader');
+			})
+			$('.addgeter').click(function(){
+				$('.getrow:first').clone().appendTo('.hgeter');
+			})
+			$('.addposter').click(function(){
+				$('.postrow:first').clone().appendTo('.hposter');
+			})
+			$('.addcooker').click(function(){
+				$('.cookrow:first').clone().appendTo('.hcooker');
+			})
+        }); 
+</script> 
+
+</head>
+
+<body>
+	<form method = "post" id="mform" action= "">
+<div class="method">
+
+	<select name="method">
+		<option value="get" selected="selected">get</option>
+		<option value="post">post</option>
+	</select>
+
+</div>
+
+
+<div class= "url"> <font color="#ff0000"><h2>	URL</h2></font></div>
+<input type="text" class ='postdemo' name="url">
+
+
+<div class="header partarea">
+	<div class= "addheader"> <font color="#ff0000"><h2>	Header</h2></font></div>
+	<br>
+	<div class="hheader">
+	</div>
+	<div class="headrow row">
+	<input type="text" class ='headdemo' name="headerk[]"> = <input type="text" name="headerv[]">
+   <input class='del' id ="idhead" type="button" value="del">
+	</div>
+
+</div>
+
+<div class="geter">
+	<div class= "addgeter"> <font color="#ff0000"><h2>	GET</h2></font></div>
+	<br>
+	<div class="hgeter">
+	</div>
+	<div class="getrow row">
+	<input type="text" class ='getdemo' name="geterk[]"> = <input type="text" name="geterv[]">
+   <input class='del' id ="idget" type="button" value="del">
+	</div>
+
+</div>
+
+
+
+<div class="poster">
+	<div class= "addposter"> <font color="#ff0000"><h2>	POST</h2></font></div>
+	<br>
+	<div class="hposter">
+	</div>
+	<div class="postrow row">
+	<input type="text" class ='postdemo' name="posterk[]"> = <input type="text" name="posterv[]">
+   <input class='del' id ="idget" type="button" value="del">
+	</div>
+
+</div>
+
+
+<div class="cooker">
+	<div class= "addcooker"> <font color="#ff0000"><h2>	cook</h2></font></div>
+	<br>
+	<div class="hcooker">
+	</div>
+	<div class="cookrow row">
+	<input type="text" class ='cookdemo' name="cookerk[]"> = <input type="text" name="cookerv[]">
+   <input class='del' id ="idget" type="button" value="del">
+	</div>
+
+</div>
+
+<input type = "button" name ="reset" id="resetform" value="Reset All">
+<input type = "submit" name ="submit" value="Go !">
+</form>
+
+</body>
+
+</html>
+
+
