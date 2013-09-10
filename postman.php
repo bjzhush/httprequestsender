@@ -5,7 +5,6 @@
 //使用本地存储，记录历史数据 ?
 //支持 a=b&c=d&e=f 风格的输入？
 if(count($_POST)){
-//	echo '<pre>'; var_dump($_POST);exit;
 	$url = $_POST['url'];
 //validate url
 	if(!filter_var($url, FILTER_VALIDATE_URL))
@@ -14,7 +13,6 @@ if(count($_POST)){
 	 exit;
 	 }
 //array remix
-//	echo '<pre>'; var_dump($_POST);exit;
 	$r_head = array();
 	foreach($_POST['headerk'] as $k => $v){
 		if(empty($v)){
@@ -75,7 +73,6 @@ if(count($_POST)){
 	foreach($r_head as $k => $v){
 		$header[] = $k.': '.$v;
 	}
-//	$headr[] = 'Authorization: OAuth '.$accesstoken;
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_POST, 1);
